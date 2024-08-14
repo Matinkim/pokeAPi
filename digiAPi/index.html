@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>디지몬 도감</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .search-bar {
+        margin-bottom: 20px;
+      }
+      .search-bar input {
+        padding: 10px;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .digimon-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .digimon-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: 200px;
+        text-align: center;
+        position: relative;
+      }
+      .digimon-card img {
+        max-width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .digimon-card h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+      }
+      .digimon-card p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>디지몬 도감</h1>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="디지몬 이름으로 검색" />
+      </div>
+      <div class="digimon-list" id="digimon-list"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
