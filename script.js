@@ -90,7 +90,7 @@ function filterPokemon() {
   });
 }
 
-// 페이지 로드 시 포켓몬 갤러리 초기화
+// 페이지 로드 시 포켓몬 갤러리 초기화(수정)
 fetchPokemons().catch((error) =>
   console.error("Error initializing Pokémon gallery:", error)
 );
