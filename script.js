@@ -1,5 +1,5 @@
 // 포켓몬 총 수 설정
-const pokemonCount = 1000;
+const pokemonCount = 251;
 
 // DOM 요소 참조
 const pokemonGallery = document.getElementById("pokemonGallery"); // 포켓몬 카드 갤러리 요소
