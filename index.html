@@ -1,27 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- 문서의 문자 인코딩을 UTF-8로 설정합니다. -->
     <meta charset="UTF-8" />
+
+    <!-- 뷰포트 설정: 모바일 장치에서 올바르게 보이도록 설정합니다. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 문서의 제목을 설정합니다. 이 제목은 브라우저 탭에 표시됩니다. -->
     <title>포켓몬 도감</title>
+
+    <!-- 외부 CSS 파일을 링크하여 스타일을 적용합니다. -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>포켓몬 도감</h1>
+    <!-- 페이지 상단의 헤더 부분입니다. -->
+    <div id="header">
+      <!-- 포켓몬 로고 이미지. 초기 로고 이미지가 표시됩니다. -->
+      <img
+        id="headerImage"
+        src="./20240816_poke/img/gold1jfif.jfif"
+        alt="포켓몬 로고"
+      />
+    </div>
+
+    <!-- 검색 입력과 타입 필터를 위한 영역입니다. -->
     <input
       type="text"
       id="searchInput"
       placeholder="포켓몬 이름을 입력하세요"
       onkeyup="filterPokemon()"
+      <!--
+      사용자가
+      입력할
+      때마다
+      filterPokemon
+      함수가
+      호출됩니다.
+      --
     />
-    <div id="pokemonGallery" class="gallery"></div>
+    />
+    <label>
+      타입:
+      <!-- 타입 필터를 위한 드롭다운 선택 메뉴입니다. -->
+      <select id="typeFilter" onchange="filterByType()">
+        <!-- "모든 타입" 옵션을 기본으로 표시합니다. -->
+        <option value="all">모든 타입</option>
+      </select>
+    </label>
+    <!-- 다크 모드와 라이트 모드를 전환할 수 있는 버튼입니다. -->
+    <button id="darkModeButton">다크 모드</button>
 
-    <!-- Modal -->
+    <!-- 포켓몬 카드 갤러리와 페이지 네이션을 위한 영역입니다. -->
+    <div id="pokemonGallery" class="gallery"></div>
+    <div id="pagination"></div>
+
+    <!-- 포켓몬 상세 정보를 표시하는 모달 윈도우입니다. -->
     <div id="pokemonModal" class="modal">
       <div class="modal-content">
+        <!-- 모달 닫기 버튼입니다. 클릭하면 closeModal 함수가 호출됩니다. -->
         <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <!-- 모달의 제목 (포켓몬 이름)을 표시합니다. -->
         <h2 id="modalTitle">포켓몬 이름</h2>
+
+        <!-- 포켓몬의 기본 이미지와 이로치 이미지입니다. -->
         <img id="modalImage" src="" alt="포켓몬 이미지" />
+        <img id="modalShinyImage" src="" alt="이로치 포켓몬 이미지" />
+
+        <!-- 포켓몬의 상세 정보를 표시하는 영역입니다. -->
         <div id="modalInfo">
           <p><strong>타입:</strong> <span id="modalTypes"></span></p>
           <p><strong>능력:</strong> <span id="modalAbilities"></span></p>
@@ -32,6 +79,7 @@
       </div>
     </div>
 
+    <!-- JavaScript 파일을 링크하여 페이지에 동적 기능을 추가합니다. -->
     <script src="script.js"></script>
   </body>
 </html>

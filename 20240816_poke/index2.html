@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포켓몬 도감</title>
+    <!-- 외부 CSS 파일 링크 -->
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <!-- 페이지의 제목 -->
+    <h1>포켓몬 도감</h1>
+
+    <!-- 검색 입력과 타입 필터 -->
+    <!-- 포켓몬 이름을 검색할 수 있는 입력 필드 -->
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="포켓몬 이름을 입력하세요"
+      onkeyup="filterPokemon()"
+    />
+    <!--입력이 변경 될때마다  filterPokemon() 함수 호출-->
+
+    <!-- 포켓몬 타입을 선택할 수 있는 드롭다운 메뉴 -->
+    <label>
+      타입:
+      <select id="typeFilter" onchange="filterByType()">
+        <!-- 선택이 변경될 때마다 filterByType() 함수 호출 -->
+        <option value="all">모든 타입</option>
+        <!-- 모든 타입을 선택할 수 있는 옵션 -->
+      </select>
+    </label>
+
+    <!-- 다크 모드를 활성화/비활성화하는 버튼 -->
+    <button id="darkModeButton">다크 모드</button>
+
+    <!-- 포켓몬 카드 갤러리 -->
+    <!-- 포켓몬 카드가 표시될 영역 -->
+    <div id="pokemonGallery" class="gallery"></div>
+    <!-- 페이지네이션 (현재는 비어 있음) -->
+    <div id="pagination"></div>
+
+    <!-- 포켓몬 상세 정보를 보여주는 모달 -->
+    <div id="pokemonModal" class="modal">
+      <div class="modal-content">
+        <!-- 모달 닫기 버튼 -->
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <!-- 모달 내의 포켓몬 이름 제목 -->
+        <h2 id="modalTitle">포켓몬 이름</h2>
+        <!-- 포켓몬의 기본 이미지 -->
+        <img id="modalImage" src="" alt="포켓몬 이미지" />
+        <!-- 포켓몬의 이로치 이미지 -->
+        <img id="modalShinyImage" src="" alt="이로치 포켓몬 이미지" />
+        <div id="modalInfo">
+          <!-- 포켓몬 타입 -->
+          <p><strong>타입:</strong> <span id="modalTypes"></span></p>
+          <!-- 포켓몬 능력 -->
+          <p><strong>능력:</strong> <span id="modalAbilities"></span></p>
+          <!-- 포켓몬 높이 -->
+          <p><strong>높이:</strong> <span id="modalHeight"></span> m</p>
+          <!-- 포켓몬 무게 -->
+          <p><strong>무게:</strong> <span id="modalWeight"></span> kg</p>
+          <!-- 포켓몬 능력치 -->
+          <p><strong>능력치:</strong> <span id="modalStats"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 외부 JavaScript 파일 링크 -->
+    <script src="script2.js"></script>
+  </body>
+</html>
